@@ -10,6 +10,6 @@ namespace api.Models
 
         }
         public DbSet<Resume> Resumes { get; set; }
-        public DbSet<Users> Users { get; set; } = default!;
+        public DbSet<User> Users { get; set; } = default!;
     }
 }

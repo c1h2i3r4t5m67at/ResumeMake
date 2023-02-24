@@ -11,16 +11,16 @@ namespace api.Controllers
 {
     [Route("api/[controller]")]
     [ApiController]
-    public class ResumesController : ControllerBase
+    public class ResumeController : ControllerBase
     {
         private readonly ResumeDbContext _context;
 
-        public ResumesController(ResumeDbContext context)
+        public ResumeController(ResumeDbContext context)
         {
             _context = context;
         }
 
-        // GET: api/Resumes
+        // GET: api/Resume
         [HttpGet]
         public async Task<ActionResult<IEnumerable<Resume>>> GetResumes()
         {
@@ -31,7 +31,7 @@ namespace api.Controllers
             return await _context.Resumes.ToListAsync();
         }
 
-        // GET: api/Resumes/5
+        // GET: api/Resume/5
         [HttpGet("{id}")]
         public async Task<ActionResult<Resume>> GetResume(int id)
         {
@@ -49,7 +49,7 @@ namespace api.Controllers
             return resume;
         }
 
-        // PUT: api/Resumes/5
+        // PUT: api/Resume/5
         // To protect from overposting attacks, see https://go.microsoft.com/fwlink/?linkid=2123754
         [HttpPut("{id}")]
         public async Task<IActionResult> PutResume(int id, Resume resume)
@@ -80,7 +80,7 @@ namespace api.Controllers
             return NoContent();
         }
 
-        // POST: api/Resumes
+        // POST: api/Resume
         // To protect from overposting attacks, see https://go.microsoft.com/fwlink/?linkid=2123754
         [HttpPost]
         public async Task<ActionResult<Resume>> PostResume(Resume resume)
@@ -95,7 +95,7 @@ namespace api.Controllers
             return CreatedAtAction("GetResume", new { id = resume.UserId }, resume);
         }
 
-        // DELETE: api/Resumes/5
+        // DELETE: api/Resume/5
         [HttpDelete("{id}")]
         public async Task<IActionResult> DeleteResume(int id)
         {
