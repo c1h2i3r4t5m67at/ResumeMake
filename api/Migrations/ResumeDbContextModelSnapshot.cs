@@ -30,7 +30,6 @@ namespace api.Migrations
                     SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("UserId"));
 
                     b.Property<string>("Name")
-                        .IsRequired()
                         .HasColumnType("nvarchar(60)");
 
                     b.HasKey("UserId");

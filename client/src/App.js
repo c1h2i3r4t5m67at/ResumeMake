@@ -5,9 +5,7 @@ export const BASE_URL = "http://localhost:5133/";
 
 function App() {
   const foo = () => {
-    axios.post("http://localhost:5133/api/NewResumes", {
-         Name: "Lusine"
-       })
+    axios.get("http://localhost:5133/api/NewResumes")
             .then(res => {
                 console.log(res)              
             })

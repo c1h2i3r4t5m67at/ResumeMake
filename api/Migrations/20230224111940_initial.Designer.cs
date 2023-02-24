@@ -11,8 +11,8 @@ using api.Models;
 namespace api.Migrations
 {
     [DbContext(typeof(ResumeDbContext))]
-    [Migration("20230219180251_Initial")]
-    partial class Initial
+    [Migration("20230224111940_initial")]
+    partial class initial
     {
         /// <inheritdoc />
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
@@ -33,7 +33,6 @@ namespace api.Migrations
                     SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("UserId"));
 
                     b.Property<string>("Name")
-                        .IsRequired()
                         .HasColumnType("nvarchar(60)");
 
                     b.HasKey("UserId");

@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\Lusine\\Desktop\\ResumeMaker\\api\\api.csproj": {}
+    "C:\\Users\\Lusine\\Documents\\ResumeMaker\\api\\api.csproj": {}
   },
   "projects": {
-    "C:\\Users\\Lusine\\Desktop\\ResumeMaker\\api\\api.csproj": {
+    "C:\\Users\\Lusine\\Documents\\ResumeMaker\\api\\api.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\Lusine\\Desktop\\ResumeMaker\\api\\api.csproj",
+        "projectUniqueName": "C:\\Users\\Lusine\\Documents\\ResumeMaker\\api\\api.csproj",
         "projectName": "api",
-        "projectPath": "C:\\Users\\Lusine\\Desktop\\ResumeMaker\\api\\api.csproj",
+        "projectPath": "C:\\Users\\Lusine\\Documents\\ResumeMaker\\api\\api.csproj",
         "packagesPath": "C:\\Users\\Lusine\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\Lusine\\Desktop\\ResumeMaker\\api\\obj\\",
+        "outputPath": "C:\\Users\\Lusine\\Documents\\ResumeMaker\\api\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "C:\\Users\\Lusine\\AppData\\Roaming\\NuGet\\NuGet.Config",

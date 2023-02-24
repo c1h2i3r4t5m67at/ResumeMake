@@ -5,7 +5,7 @@
 namespace api.Migrations
 {
     /// <inheritdoc />
-    public partial class Initial : Migration
+    public partial class initial : Migration
     {
         /// <inheritdoc />
         protected override void Up(MigrationBuilder migrationBuilder)
@@ -16,7 +16,7 @@ namespace api.Migrations
                 {
                     UserId = table.Column<int>(type: "int", nullable: false)
                         .Annotation("SqlServer:Identity", "1, 1"),
-                    Name = table.Column<string>(type: "nvarchar(60)", nullable: false)
+                    Name = table.Column<string>(type: "nvarchar(60)", nullable: true)
                 },
                 constraints: table =>
                 {
