@@ -1,19 +1,17 @@
 import React from "react";
 import "./App.css";
 import Login from "./components/Login";
-import setStorage from "./helpers/setStorage";
-import getStorage from "./helpers/getStorage";
 import { Routes, Route } from "react-router-dom";
+import MainPage from "./components/MainPage";
 
 function App() {
   return (
     <>
       <Routes>
-
-      <Route path="/" element={<Login />} />
-      {/* {getStorage?<button onClick={() => setStorage(null)}>Logout</button>:1} */}
+        <Route path="/" element={<Login />} />
+        <Route path="/main" element={<MainPage />} />
+   
       </Routes>
-
     </>
   );
 }

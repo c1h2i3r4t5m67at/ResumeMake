@@ -1,10 +1,8 @@
 import React from "react";
 import { useState } from "react";
-import axios from "axios";
 import "../styles/Login.css";
-import setStorage from "../helpers/setStorage";
-import { BASE_URL } from "../api/index";
-import {login} from "../api/index.js"
+
+import {login} from "../helpers/login.js"
 
 function Login() {
   const [val, setVal] = useState("");
@@ -13,6 +11,7 @@ function Login() {
 
   return (
     <>
+      Login or Register
       <form noValidate autoComplete="off" onSubmit={(e) => login(val, pass, e)}>
         <label>Enter your username </label>
         <input
