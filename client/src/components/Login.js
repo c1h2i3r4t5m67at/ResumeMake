@@ -2,6 +2,8 @@ import React from "react";
 import { useState } from "react";
 import axios from "axios";
 import "../styles/Login.css";
+import setStorage from "../helpers/setStorage";
+import {BASE_URL} from "../api/index"
 
 function Login() {
   const [val, setVal] = useState("");
@@ -14,9 +16,10 @@ function Login() {
       Password: pass,
     };
     axios
-      .post("http://localhost:5133/api/User", data)
+      .post(BASE_URL + "api/User", data)
       .then((res) => {
         console.log(res);
+        setStorage(res.data.id)
       })
       .catch((err) => console.log(err));
   };
