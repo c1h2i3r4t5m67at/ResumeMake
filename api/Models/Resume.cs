@@ -3,7 +3,7 @@ using System.ComponentModel.DataAnnotations.Schema;
 
 namespace api.Models
 {
-    public class NewResume
+    public class Resume
     {
         [Key]
         public int UserId { get; set; }
