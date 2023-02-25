@@ -1,4 +1,5 @@
 ﻿using Microsoft.EntityFrameworkCore;
+using api.Models;
 
 namespace api.Models
 {
@@ -8,6 +9,7 @@ namespace api.Models
         {
 
         }
-        public DbSet<NewResume> Resumes { get; set; }
+        public DbSet<Resume> Resumes { get; set; }
+        public DbSet<User> Users { get; set; } = default!;
     }
 }
