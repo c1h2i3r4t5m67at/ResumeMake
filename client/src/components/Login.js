@@ -1,18 +1,21 @@
 import React from "react";
 import { useState } from "react";
 import "../styles/Login.css";
-
+import { useNavigate } from "react-router-dom";
 import {login} from "../helpers/login.js"
 
 function Login() {
   const [val, setVal] = useState("");
   const [pass, setPass] = useState("");
-
+  const navigate = useNavigate();
 
   return (
     <>
       Login or Register
-      <form noValidate autoComplete="off" onSubmit={(e) => login(val, pass, e)}>
+      <form noValidate autoComplete="off" onSubmit={(e) => {
+        login(val, pass, e)
+        navigate("/main")
+      }}>
         <label>Enter your username </label>
         <input
           value={val}
