@@ -3,30 +3,17 @@ import { useState } from "react";
 import axios from "axios";
 import "../styles/Login.css";
 import setStorage from "../helpers/setStorage";
-import {BASE_URL} from "../api/index"
+import { BASE_URL } from "../api/index";
+import {login} from "../api/index.js"
 
 function Login() {
   const [val, setVal] = useState("");
   const [pass, setPass] = useState("");
 
-  const login = (e) => {
-    e.preventDefault();
-    let data = {
-      UserName: val,
-      Password: pass,
-    };
-    axios
-      .post(BASE_URL + "api/User", data)
-      .then((res) => {
-        console.log(res);
-        setStorage(res.data.id)
-      })
-      .catch((err) => console.log(err));
-  };
 
   return (
     <>
-      <form noValidate autoComplete="off" onSubmit={login}>
+      <form noValidate autoComplete="off" onSubmit={(e) => login(val, pass, e)}>
         <label>Enter your username </label>
         <input
           value={val}

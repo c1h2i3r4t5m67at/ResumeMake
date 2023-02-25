@@ -1,4 +1,5 @@
 import axios from "axios";
+import setStorage from "../helpers/setStorage";
 
 export const BASE_URL = "http://localhost:5133/";
 
@@ -7,6 +8,21 @@ export const ENDPOINTS = {
   resume: "resume",
   experience: "experience",
   skill: "experience/skills",
+};
+
+export const login = (n, p, e) => {
+  e.preventDefault();
+  let data = {
+    UserName: n,
+    Password: p,
+  };
+  axios
+    .post(BASE_URL + "api/User", data)
+    .then((res) => {
+      console.log(res);
+      setStorage(res.data.id)
+    })
+    .catch((err) => console.log(err));
 };
 
 export const createAPIEndpoint = (endpoint) => {
