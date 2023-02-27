@@ -21,7 +21,7 @@ function MainPage() {
   }, [getStorage()]);
   return (
     <>
-      <div>{username}</div>
+      <div>{username?username:"loading..."}</div>
       {getStorage ? (
         <button
           onClick={() => {
@@ -34,6 +34,7 @@ function MainPage() {
           {button}
         </button>
       ) : null}
+      <button onClick={() => navigate("/newResume")}>Add resume</button>
     </>
   );
 }
