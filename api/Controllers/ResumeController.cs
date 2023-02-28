@@ -49,6 +49,18 @@ namespace api.Controllers
             return resume;
         }
 
+        [Route("[action]/{UserId}")]
+        [HttpGet]
+        public async Task<ActionResult<Resume>> GetByUser(int UserId)
+        {
+            var resume = await _context.Resumes.Where(r => r.UserId == UserId).ToListAsync();
+            if (resume == null)
+            {
+                return NotFound();
+            }
+            return Ok(resume);
+        }
+
         // PUT: api/Resume/5
         // To protect from overposting attacks, see https://go.microsoft.com/fwlink/?linkid=2123754
         [HttpPut("{id}")]
