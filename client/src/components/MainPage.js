@@ -10,6 +10,7 @@ function MainPage() {
   const navigate = useNavigate();
   const [username, setUsername] = useState("");
   const [button, setButton] = useState("Logout");
+  const [resumes, setResumes] = useState([]);
   useEffect(() => {
     axios
       .get(BASE_URL + "api/User/" + getStorage())
@@ -19,9 +20,26 @@ function MainPage() {
       })
       .catch((err) => console.log(err));
   }, [getStorage()]);
+  useEffect(() => {
+    axios
+      .get(BASE_URL + "api/Resume/GetByUser/" + getStorage())
+      .then((res) => {
+        console.log(res.data);
+        setResumes(res.data);
+      })
+      .catch((err) => console.log(err));
+  }, []);
+  const deleteResume = (e) => {
+    axios
+      .delete(BASE_URL + "api/Resume/" + e)
+      .then((res) => {
+        console.log(resumes);
+      })
+      .catch((err) => console.log(err));
+  };
   return (
     <>
-      <div>{username?username:"loading..."}</div>
+      <div>{username ? username : "loading..."}</div>
       {getStorage ? (
         <button
           onClick={() => {
@@ -35,6 +53,28 @@ function MainPage() {
         </button>
       ) : null}
       <button onClick={() => navigate("/newResume")}>Add resume</button>
+      <table>
+        <tr>
+          <th>#</th>
+          <th>First Name</th>
+          <th>Last Name</th>
+          <th>Username</th>
+          <th>jobTitle</th>
+        </tr>
+        <tbody>
+          {resumes.map((resume) => (
+            <tr>
+              <td>{resume.id}</td>
+              <td>{resume.name}</td>
+              <td>{resume.fullName}</td>
+              <td>{resume.location}</td>
+              <td>{resume.jobTitle}</td>
+              <button onClick={() => deleteResume(resume.id)}>Delete</button>
+              <button>View</button>
+            </tr>
+          ))}
+        </tbody>
+      </table>
     </>
   );
 }
