@@ -37,6 +37,10 @@ function MainPage() {
       })
       .catch((err) => console.log(err));
   };
+  const passId = (e) => {
+    localStorage.setItem(`resumeId`, JSON.stringify(e));
+    navigate("/viewresume")
+  };
   return (
     <>
       <div>{username ? username : "loading..."}</div>
@@ -70,7 +74,7 @@ function MainPage() {
               <td>{resume.location}</td>
               <td>{resume.jobTitle}</td>
               <button onClick={() => deleteResume(resume.id)}>Delete</button>
-              <button>View</button>
+              <button onClick={() => passId(resume.id)}>View</button>
             </tr>
           ))}
         </tbody>
