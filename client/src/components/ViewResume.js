@@ -2,6 +2,8 @@ import React from "react";
 import axios from "axios";
 import { BASE_URL } from "../api/index";
 import { useState, useEffect } from "react";
+import EditDetails from "./EditDetails";
+import 'bootstrap/dist/css/bootstrap.css';
 
 function ViewResume() {
   const [resume, setResume] = useState({});
@@ -20,12 +22,12 @@ function ViewResume() {
     <>
       <div>
         <div>Name: {resume.name}</div>
-        <div>Surname: {resume.fullName}</div>
+          <div>Surname: {resume.fullName}</div>
         <div>Job title: {resume.jobTitle}</div>
         <div>Location: {resume.location}</div>
         <div>Mobile number: {resume.phone}</div>
       </div>
-      ;
+      <EditDetails resume={resume} setResume={setResume} />
     </>
   );
 }

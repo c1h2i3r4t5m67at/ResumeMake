@@ -66,9 +66,9 @@ function MainPage() {
           <th>jobTitle</th>
         </tr>
         <tbody>
-          {resumes.map((resume) => (
+          {resumes.map((resume, index) => (
             <tr>
-              <td>{resume.id}</td>
+              <td>{index+1}</td>
               <td>{resume.name}</td>
               <td>{resume.fullName}</td>
               <td>{resume.location}</td>
