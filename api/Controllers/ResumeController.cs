@@ -65,12 +65,13 @@ namespace api.Controllers
         // To protect from overposting attacks, see https://go.microsoft.com/fwlink/?linkid=2123754
         [HttpPut("{id}")]
         public async Task<IActionResult> PutResume(int id, Resume resume)
+
         {
             if (id != resume.Id)
             {
                 return BadRequest();
             }
-
+     
             _context.Entry(resume).State = EntityState.Modified;
 
             try

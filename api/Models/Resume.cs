@@ -8,19 +8,19 @@ namespace api.Models
         [Key]
         public int Id { get; set; }
         [Column(TypeName = "nvarchar(60)")]
-        public string? Name { get; set; }
+        public string Name { get; set; }
         [Column(TypeName = "nvarchar(60)")]
-        public int? UserId { get; set; }
+        public int UserId { get; set; }
         [Column(TypeName = "nvarchar(60)")]
         public string UrlId { get; set; }
         [Column(TypeName = "nvarchar(60)")]
         public string FullName { get; set; }
         [Column(TypeName = "nvarchar(60)")]
-        public string? JobTitle { get; set; }
+        public string JobTitle { get; set; }
         [Column(TypeName = "nvarchar(60)")]
-        public string? Location { get; set; }
+        public string Location { get; set; }
         [Column(TypeName = "nvarchar(60)")]
-        public string? Phone { get; set; }
+        public string Phone { get; set; }
 
 
         public DateTime CreatedDate { get; set; }
