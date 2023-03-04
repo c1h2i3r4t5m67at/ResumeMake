@@ -5,6 +5,9 @@ import { useEffect, useState } from "react";
 import axios from "axios";
 import { BASE_URL } from "../api/index";
 import { useNavigate } from "react-router-dom";
+import Table from 'react-bootstrap/Table';
+import 'bootstrap/dist/css/bootstrap.css';
+import Button from 'react-bootstrap/Button';
 
 function MainPage() {
   const navigate = useNavigate();
@@ -57,9 +60,9 @@ function MainPage() {
         </button>
       ) : null}
       <button onClick={() => navigate("/newResume")}>Add resume</button>
-      <table>
+      <Table striped   >
         <tr>
-          <th>#</th>
+          <th>Resume</th>
           <th>First Name</th>
           <th>Last Name</th>
           <th>Username</th>
@@ -73,12 +76,12 @@ function MainPage() {
               <td>{resume.fullName}</td>
               <td>{resume.location}</td>
               <td>{resume.jobTitle}</td>
-              <button onClick={() => deleteResume(resume.id)}>Delete</button>
-              <button onClick={() => passId(resume.id)}>View</button>
+              <Button variant="outline-primary" onClick={() => deleteResume(resume.id)}>Delete</Button>
+              <Button variant="outline-primary" onClick={() => passId(resume.id)}>View</Button>
             </tr>
           ))}
         </tbody>
-      </table>
+      </Table>
     </>
   );
 }
