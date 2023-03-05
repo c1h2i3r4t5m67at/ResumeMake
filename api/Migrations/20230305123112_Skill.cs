@@ -6,7 +6,7 @@ using Microsoft.EntityFrameworkCore.Migrations;
 namespace api.Migrations
 {
     /// <inheritdoc />
-    public partial class resumesad : Migration
+    public partial class Skill : Migration
     {
         /// <inheritdoc />
         protected override void Up(MigrationBuilder migrationBuilder)
@@ -17,13 +17,13 @@ namespace api.Migrations
                 {
                     Id = table.Column<int>(type: "int", nullable: false)
                         .Annotation("SqlServer:Identity", "1, 1"),
-                    Name = table.Column<string>(type: "nvarchar(60)", nullable: true),
-                    UserId = table.Column<string>(type: "nvarchar(60)", nullable: true),
+                    Name = table.Column<string>(type: "nvarchar(60)", nullable: false),
+                    UserId = table.Column<string>(type: "nvarchar(60)", nullable: false),
                     UrlId = table.Column<string>(type: "nvarchar(60)", nullable: false),
                     FullName = table.Column<string>(type: "nvarchar(60)", nullable: false),
-                    JobTitle = table.Column<string>(type: "nvarchar(60)", nullable: true),
-                    Location = table.Column<string>(type: "nvarchar(60)", nullable: true),
-                    Phone = table.Column<string>(type: "nvarchar(60)", nullable: true),
+                    JobTitle = table.Column<string>(type: "nvarchar(60)", nullable: false),
+                    Location = table.Column<string>(type: "nvarchar(60)", nullable: false),
+                    Phone = table.Column<string>(type: "nvarchar(60)", nullable: false),
                     CreatedDate = table.Column<DateTime>(type: "datetime2", nullable: false),
                     UpdatedDate = table.Column<DateTime>(type: "datetime2", nullable: false)
                 },

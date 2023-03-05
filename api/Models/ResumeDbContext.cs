@@ -11,5 +11,7 @@ namespace api.Models
         }
         public DbSet<Resume> Resumes { get; set; }
         public DbSet<User> Users { get; set; } = default!;
+        public DbSet<api.Models.Experience> Experience { get; set; } = default!;
+        public DbSet<api.Models.Skill> Skill { get; set; } = default!;
     }
 }

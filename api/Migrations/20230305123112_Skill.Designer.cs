@@ -12,8 +12,8 @@ using api.Models;
 namespace api.Migrations
 {
     [DbContext(typeof(ResumeDbContext))]
-    [Migration("20230226160511_resumesad")]
-    partial class resumesad
+    [Migration("20230305123112_Skill")]
+    partial class Skill
     {
         /// <inheritdoc />
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
@@ -41,15 +41,19 @@ namespace api.Migrations
                         .HasColumnType("nvarchar(60)");
 
                     b.Property<string>("JobTitle")
+                        .IsRequired()
                         .HasColumnType("nvarchar(60)");
 
                     b.Property<string>("Location")
+                        .IsRequired()
                         .HasColumnType("nvarchar(60)");
 
                     b.Property<string>("Name")
+                        .IsRequired()
                         .HasColumnType("nvarchar(60)");
 
                     b.Property<string>("Phone")
+                        .IsRequired()
                         .HasColumnType("nvarchar(60)");
 
                     b.Property<DateTime>("UpdatedDate")
@@ -60,6 +64,7 @@ namespace api.Migrations
                         .HasColumnType("nvarchar(60)");
 
                     b.Property<string>("UserId")
+                        .IsRequired()
                         .HasColumnType("nvarchar(60)");
 
                     b.HasKey("Id");
