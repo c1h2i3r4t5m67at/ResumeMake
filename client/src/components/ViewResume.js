@@ -20,7 +20,7 @@ function ViewResume() {
 
   return (
     <>
-      <div>
+      <div><h4>Main information</h4>
         <div>Name: {resume.name}</div>
           <div>Surname: {resume.fullName}</div>
         <div>Job title: {resume.jobTitle}</div>
@@ -28,6 +28,7 @@ function ViewResume() {
         <div>Mobile number: {resume.phone}</div>
       </div>
       <EditDetails resume={resume} setResume={setResume} />
+      <h5>Experience </h5>
     </>
   );
 }
