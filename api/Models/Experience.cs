@@ -3,7 +3,7 @@
     public class Experience
     {
         public int Id { get; set; }
-        public int ResumeId { get; set; }
+        public int? ResumeId { get; set; }
         public Resume Resume { get; set; }
         public DateTime StartDate { get; set; }
         public DateTime EndDate { get; set; }
