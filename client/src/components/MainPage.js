@@ -14,6 +14,7 @@ function MainPage() {
   const [username, setUsername] = useState("");
   const [button, setButton] = useState("Logout");
   const [resumes, setResumes] = useState([]);
+  
   useEffect(() => {
     axios
       .get(BASE_URL + "api/User/" + getStorage())

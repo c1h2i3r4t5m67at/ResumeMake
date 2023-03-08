@@ -15,14 +15,7 @@ function NewResume() {
     Phone: "",
     UserId: getStorage(),
   });
-  // const [experience, setExperience] = useState({
-  //   Name: "",
-  //   FullName: "",
-  //   JobTitle: "",
-  //   Location: "",
-  //   Phone: "",
-  //   UserId: getStorage(),
-  // });
+
   const createResume = (e) => {
     e.preventDefault();
     const data = resumeData;
@@ -36,7 +29,8 @@ function NewResume() {
       .post(BASE_URL + "api/Resume", data)
       .then((res) => {
         console.log(res);
-        navigate("/main");
+        navigate("/experience");
+        localStorage.setItem(`newResumeId`, JSON.stringify(res.data.id))
       })
       .catch((err) => console.log(err));
   };
@@ -94,7 +88,7 @@ function NewResume() {
             }}
           />
         </label>
-        <h5>Experience </h5>
+        
         <button type="submit">Create</button>
       </form>
     </>

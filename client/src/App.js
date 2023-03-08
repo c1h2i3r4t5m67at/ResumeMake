@@ -5,6 +5,7 @@ import { Routes, Route } from "react-router-dom";
 import MainPage from "./components/MainPage";
 import NewResume from "./components/NewResume";
 import ViewResume from "./components/ViewResume";
+import Experience from "./components/Experience";
 
 
 function App() {
@@ -16,6 +17,7 @@ function App() {
         <Route path="/main" element={<MainPage />} />   
         <Route path="/newResume" element={<NewResume />} />   
         <Route path="/viewresume" element={<ViewResume />} />    
+        <Route path="/experience" element={<Experience />} />    
       </Routes>
     </>
   );
