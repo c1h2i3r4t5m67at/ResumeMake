@@ -12,6 +12,6 @@
         public string OrganisationName { get; set; }
         public string Description { get; set; }
         public string Responsibilities { get; set; }
-        public IEnumerable<Skill> InvolvedSkills { get; set; }
+       
     }
 }

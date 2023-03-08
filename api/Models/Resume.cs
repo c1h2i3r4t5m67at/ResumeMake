@@ -21,7 +21,7 @@ namespace api.Models
         public string Location { get; set; }
         [Column(TypeName = "nvarchar(60)")]
         public string Phone { get; set; }
-        public IEnumerable<Experience> Experiances { get; set; }
+  
 
         public DateTime CreatedDate { get; set; }
         public DateTime UpdatedDate { get; set; }
