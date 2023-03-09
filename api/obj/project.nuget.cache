@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "F4hLsaXLkR20qi5bilb2KZEWlkvGB9PRcj2p+q7TkDoxeTihR4JiBQruMcNdmVez/nexOfJlWrvxtuprWMCOkg==",
+  "dgSpecHash": "emxXBPYCGg6MnDzUE5bIvkEQmcsI/0fsjyHuFgkZXQM8IH915F/YmOCuYBDoKRGnxCTifCnyUsj2yVq/+5IluA==",
   "success": true,
-  "projectFilePath": "C:\\Users\\Lusine\\Documents\\ResumeMaker\\api\\api.csproj",
+  "projectFilePath": "C:\\Users\\Lusine\\Desktop\\ResumeMake\\api\\api.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\Lusine\\.nuget\\packages\\azure.core\\1.24.0\\azure.core.1.24.0.nupkg.sha512",
     "C:\\Users\\Lusine\\.nuget\\packages\\azure.identity\\1.6.0\\azure.identity.1.6.0.nupkg.sha512",

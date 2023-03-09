@@ -1,7 +1,7 @@
 ﻿using System.ComponentModel.DataAnnotations;
 using System.ComponentModel.DataAnnotations.Schema;
 
-namespace api.Models
+namespace api.Entities
 {
     public class Resume
     {
@@ -21,7 +21,8 @@ namespace api.Models
         public string Location { get; set; }
         [Column(TypeName = "nvarchar(60)")]
         public string Phone { get; set; }
-  
+        public ICollection<Experience> Experiances { get; set; }
+
 
         public DateTime CreatedDate { get; set; }
         public DateTime UpdatedDate { get; set; }

@@ -1,7 +1,7 @@
 ﻿using Microsoft.EntityFrameworkCore;
-using api.Models;
+using api.Entities;
 
-namespace api.Models
+namespace api.Entities
 {
     public class ResumeDbContext : DbContext
     {
@@ -11,7 +11,7 @@ namespace api.Models
         }
         public DbSet<Resume> Resumes { get; set; }
         public DbSet<User> Users { get; set; } = default!;
-        public DbSet<api.Models.Experience> Experience { get; set; } = default!;
-        public DbSet<api.Models.Skill> Skill { get; set; } = default!;
+        public DbSet<Experience> Experience { get; set; } = default!;
+        public DbSet<Skill> Skill { get; set; } = default!;
     }
 }

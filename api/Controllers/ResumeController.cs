@@ -5,6 +5,7 @@ using System.Threading.Tasks;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
+using api.Entities;
 using api.Models;
 
 namespace api.Controllers
@@ -96,16 +97,18 @@ namespace api.Controllers
         // POST: api/Resume
         // To protect from overposting attacks, see https://go.microsoft.com/fwlink/?linkid=2123754
         [HttpPost]
-        public async Task<ActionResult<Resume>> PostResume(Resume resume)
+        public async Task<ActionResult<Resume>> PostResume(ResumeCreateDto createDto)
         {
           if (_context.Resumes == null)
           {
+             
               return Problem("Entity set 'ResumeDbContext.Resumes'  is null.");
           }
+            var resume = new Resume();
             _context.Resumes.Add(resume);
             await _context.SaveChangesAsync();
 
-            return CreatedAtAction("GetResume", new { id = resume.Id }, resume);
+            return CreatedAtAction("GetResume",resume);
         }
 
         // DELETE: api/Resume/5
